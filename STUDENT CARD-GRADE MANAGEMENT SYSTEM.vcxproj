@@ -123,6 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="utilities.h" />
     <ClInclude Include="StudentList.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="resource.h" />
@@ -132,6 +133,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="utilities.cpp" />
     <ClCompile Include="StudentList.cpp" />
     <ClCompile Include="Student.cpp" />
   </ItemGroup>

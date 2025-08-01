@@ -24,6 +24,9 @@
     <ClInclude Include="StudentList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="utilities.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="STUDENT CARD-GRADE MANAGEMENT SYSTEM.rc">
@@ -38,6 +41,9 @@
       <Filter>Resource Files</Filter>
     </ClCompile>
     <ClCompile Include="StudentList.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utilities.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
   </ItemGroup>
