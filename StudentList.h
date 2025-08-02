@@ -19,9 +19,10 @@ private:
     StudentNode* head;
 
 public:
+    
     StudentList(); 
 
-    ~StudentList();               // Destructor
+    ~StudentList();               
 
     void addStudent(const Student& student);
     void displayAll() const;
