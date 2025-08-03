@@ -3,6 +3,7 @@
 #ifndef UTILITIES_H
 #define UTILITIES_H
 
+
 #ifdef _WIN32
 #define clear "cls"
 #else

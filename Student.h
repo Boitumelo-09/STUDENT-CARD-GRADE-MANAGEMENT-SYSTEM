@@ -1,6 +1,6 @@
 ﻿#pragma once
 #include <iostream>
-//🧱 1. Project Idea
+
 //You're building a system to:
 //
 //Add students with marks

@@ -5,7 +5,7 @@
 
 int main() {
 
-	const char* text = "hello this is bro from the future!";
+	const char* text = "hello, this is bro from the future!";
 	std::cout << text;
 	return 0;
 

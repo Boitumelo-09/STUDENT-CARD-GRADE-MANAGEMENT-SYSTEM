@@ -1,6 +1,7 @@
 #include "utilities.h"
 #include <cstdlib>
 #include<iostream>
+
 void clearScreen() {
 	system(clear);
 }

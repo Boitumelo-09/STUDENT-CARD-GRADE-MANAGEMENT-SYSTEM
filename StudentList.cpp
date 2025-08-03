@@ -19,17 +19,17 @@ StudentList::~StudentList() {
 }
 
 void StudentList::addStudent(const Student& student) {
-    StudentNode* newNode = new StudentNode(student); // Create new node
+    StudentNode* newNode = new StudentNode(student); 
 
     if (head == nullptr) {
-        head = newNode; // First student
+        head = newNode;
     }
     else {
         StudentNode* current = head;
         while (current->next != nullptr) {
-            current = current->next; // Walk to end
+            current = current->next; 
         }
-        current->next = newNode; // Link new node
+        current->next = newNode; 
     }
 }
 void StudentList::displayAll() const {
@@ -40,7 +40,7 @@ void StudentList::displayAll() const {
 
     StudentNode* current = head;
     while (current != nullptr) {
-        current->data.displayReport(); // Calls Student method
+        current->data.displayReport(); 
         std::cout << "---------------------\n";
         current = current->next;
     }
