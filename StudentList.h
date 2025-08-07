@@ -1,36 +1,25 @@
-#pragma once
-#include "Student.h"
+#pragma once 
 
+#include "StudentData.h"
+#include "StudentNode.h"
+#include <iostream>
 
 #ifndef STUDENTLIST_H
 #define STUDENTLIST_H
-
-
-struct StudentNode
-{
-    Student studentInfo;
-    StudentNode* next;
-
-    StudentNode(Student studentInfo, StudentNode* next);
-};
-
+ 
 class StudentList {
-private:
-    StudentNode* head;
-
+private : 
+	StudentNode* head;
 public:
-    
-    StudentList(); 
+	StudentList();
+	StudentList(StudentData s);
+	~StudentList();
 
-    ~StudentList();               
 
-    void addStudent(const Student& student);
-    void displayAll() const;
-    bool deleteStudentByID(int id);
-    Student* searchStudentByID(int id);
+	void addStudent(StudentData s);
+
 };
 
-#endif
 
-
-
+ 
+#endif 
