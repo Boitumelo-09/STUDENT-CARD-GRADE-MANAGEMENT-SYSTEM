@@ -9,7 +9,7 @@ private:
 	StudentData data;
 	StudentNode* next;
 public:
-	StudentNode();
+	
 	StudentNode(StudentData data); //this constructor accepts data in the form: StudentData's Constructor. i.e: studentData(name , number , mark) , this constructor accepts constructed data
 	
 	int getStudentNumber() const;

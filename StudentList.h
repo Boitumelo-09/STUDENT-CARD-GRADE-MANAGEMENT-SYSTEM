@@ -11,13 +11,12 @@ class StudentList {
 private : 
 	StudentNode* head;
 public:
+	
 	StudentList();
-	StudentList(StudentData s);
+	
 	~StudentList();
-
-
-	void addStudent(StudentData s);
-
+	void addStudent(StudentData data);
+	void displayAllStudents() const;
 };
 
 

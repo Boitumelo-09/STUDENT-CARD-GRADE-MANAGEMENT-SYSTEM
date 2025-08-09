@@ -10,7 +10,7 @@ struct StudentData
 	std::string studentName;
 	float finalMark;
 
-	StudentData();
+	
 	StudentData(int studentNumber, std::string studentName, float finalMark);
 };
 
