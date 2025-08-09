@@ -5,9 +5,9 @@
 
 
 #ifdef _WIN32
-#define clear "cls"
+#define CLEAR_COMMAND "cls"
 #else
-#define clear "clear"
+#define CLEAR_COMMAND "clear"
 #endif
 void clearScreen();
 void pressToContinue();

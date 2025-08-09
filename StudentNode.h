@@ -1,7 +1,10 @@
 #pragma once
+#include <string>
 #include "StudentData.h"
+
 #ifndef STUDENTNODE_H
 #define STUDENTNODE_H
+
 
 class StudentNode
 {

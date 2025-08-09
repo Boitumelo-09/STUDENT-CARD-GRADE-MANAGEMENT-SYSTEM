@@ -1,3 +1,4 @@
+#include <string>
 #include "StudentData.h"
 #include "StudentNode.h"
 #include "StudentList.h"
@@ -19,7 +20,7 @@ void StudentList::addStudent(StudentData data){
 		head = newStudent;
 	}
 	else {
-		StudentNode* tempPtr = head; // preparing to traverse
+		StudentNode* tempPtr = head; 
 		while (tempPtr->getNext() != nullptr) {
 			
 			tempPtr=tempPtr->getNext();
@@ -35,12 +36,12 @@ void StudentList::displayAllStudents() const {
 	else {
 		StudentNode* tempPtr = head;
 		while (tempPtr != nullptr) {
-			std::cout << "STUDENT NUMBER : " << tempPtr->getStudentNumber();
+			std::cout << "\t\t\tSTUDENT NUMBER : " << tempPtr->getStudentNumber();
 			std::cout << std::endl;
-			std::cout << "STUDENT NAME   : " << tempPtr->getStudentName();
+			std::cout << "\t\t\tSTUDENT NAME   : " << tempPtr->getStudentName();
 			std::cout << std::endl;
-			std::cout << "STUDENT MARK : " << tempPtr->getStudentMark();
-			std::cout << "\n::::::::::::::::::::::::::::::::::::::\n";
+			std::cout << "\t\t\tSTUDENT MARK   : " << tempPtr->getStudentMark();
+			std::cout << "\n\t\t\t::::::::::::::::::::::::::::::::::::::\n";
 
 			tempPtr = tempPtr->getNext();
 		  }

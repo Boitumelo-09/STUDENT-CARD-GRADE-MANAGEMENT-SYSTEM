@@ -1,5 +1,5 @@
 #pragma once 
-
+#include <string>
 #include "StudentData.h"
 #include "StudentNode.h"
 #include <iostream>

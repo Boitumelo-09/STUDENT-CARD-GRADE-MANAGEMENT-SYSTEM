@@ -37,9 +37,6 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="StudentList.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
@@ -51,6 +48,9 @@
     </ClCompile>
     <ClCompile Include="StudentNode.cpp">
       <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
