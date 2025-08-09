@@ -12,4 +12,8 @@
 void clearScreen();
 void pressToContinue();
 
+
+void verticalPadding(int padNumber);
+
+
 #endif

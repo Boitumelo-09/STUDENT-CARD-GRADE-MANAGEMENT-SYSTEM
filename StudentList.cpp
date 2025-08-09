@@ -2,6 +2,7 @@
 #include "StudentData.h"
 #include "StudentNode.h"
 #include "StudentList.h"
+#include "utilities.h"
 #include <iostream>
 
 
@@ -16,6 +17,7 @@ StudentList::~StudentList(){
 }
 void StudentList::addStudent(StudentData data){
 	StudentNode* newStudent = new StudentNode(data);
+	
 	if (head == nullptr) {
 		head = newStudent;
 	}
@@ -29,8 +31,10 @@ void StudentList::addStudent(StudentData data){
 	}
 }
 void StudentList::displayAllStudents() const {
+	verticalPadding(4);
+	   
 	if (head == nullptr) {
-		std::cout << "No Students Available";
+		std::cout << "\t\t\tNo Students Available";
 		return;
 	}
 	else {
@@ -46,4 +50,27 @@ void StudentList::displayAllStudents() const {
 			tempPtr = tempPtr->getNext();
 		  }
 	}
+}
+void StudentList::addStudentFromUser() {
+	verticalPadding(4);
+	int studentNum;
+	std::string studentName;
+	float finalMark;
+
+	std::cout << "\t\t\tEnter Student Number : ";
+	std::cin >> studentNum;
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+	std::cout << "\t\t\tEnter Student Name   : ";
+	getline(std::cin, studentName);
+	
+
+	std::cout << "\t\t\tEnter Student Mark   : ";
+	std::cin >> finalMark;
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+	addStudent(StudentData(studentNum, studentName, finalMark));
+	clearScreen();
+	std::cout << "\n\t\t\tStudent Added Successfully\n";
+	pressToContinue();
 }

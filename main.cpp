@@ -10,13 +10,8 @@ int main() {
 
 	StudentList list;
 
-	list.addStudent(StudentData(1000, "ALIKO BOJO", 89.2));
-
-	list.addStudent(StudentData(1001, "Quick Links", 65.8));
-
-	list.addStudent(StudentData(1006, "Jeremiah Saliko", 65.8));
-
-	list.addStudent(StudentData(1003, "BelmireDub Salamaliko", 65.9));
+	list.addStudentFromUser();
+	list.addStudentFromUser();
 
 	list.displayAllStudents();
 

@@ -8,8 +8,12 @@ void clearScreen() {
 }
 
 void pressToContinue() {
-    std::cin.ignore();
-    std::cout << "\t\t\tPress Enter To Proceed...";
+    
+    std::cout << "\n\t\t\tPress Enter To Proceed...";
     std::cin.get();
     clearScreen();
+}
+
+void verticalPadding(int padNumber) {
+    std::cout << std::string(padNumber, '\n');
 }

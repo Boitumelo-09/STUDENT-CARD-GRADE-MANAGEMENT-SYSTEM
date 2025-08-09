@@ -17,6 +17,7 @@ public:
 	~StudentList();
 	void addStudent(StudentData data);
 	void displayAllStudents() const;
+	void addStudentFromUser();
 };
 
 
