@@ -15,6 +15,21 @@ StudentList::~StudentList(){
 		delete currentPtr;
 	}
 }
+
+void StudentList::displayMenu( int* menuOption) {
+	verticalPadding();
+	   
+	std::cout << horizontalPadding() << std::string(10, ':') << "M A I N - M E N U" << std::string(10, ':');
+	newLine();
+	std::cout << horizontalPadding() << "1. Add Student\n";
+	std::cout << horizontalPadding() << "2. View Students\n";
+	std::cout << horizontalPadding() << "3. Search Student\n";
+	std::cout << horizontalPadding() << "4. Edit Student\n";
+	std::cout << horizontalPadding() << "5. Delete Student\n";
+	std::cout << horizontalPadding() << "0. Exit\n";
+
+	pressToContinue();
+}
 void StudentList::addStudent(StudentData data){
 	StudentNode* newStudent = new StudentNode(data);
 	
@@ -32,7 +47,8 @@ void StudentList::addStudent(StudentData data){
 }
 void StudentList::displayAllStudents() const {
 	verticalPadding();
-	   
+	std::cout << horizontalPadding() << std::string(12, ':')<<" S T U D E N T - L I S T "<<std::string(12, ':');
+	newLine();
 	if (head == nullptr) {
 		std::cout << horizontalPadding() << "No Students Available";
 		return;
@@ -46,7 +62,7 @@ void StudentList::displayAllStudents() const {
 			newLine();
 			std::cout <<horizontalPadding()<< "STUDENT MARK   : " << tempPtr->getStudentMark();
 			newLine();
-			std::cout <<horizontalPadding()<< std::string(38 , ':');
+			std::cout <<horizontalPadding()<< std::string(50 , ':');
 			newLine();
 			
 

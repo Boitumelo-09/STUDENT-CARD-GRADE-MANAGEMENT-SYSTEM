@@ -16,6 +16,6 @@ void pressToContinue();
 std::string horizontalPadding();
 
 void verticalPadding();
-void displayMenu();
+
 
 #endif

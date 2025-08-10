@@ -7,9 +7,11 @@
 #include "utilities.h"
 
 int main() {
-
+	int option = 0;
 	StudentList list;
-	displayMenu();
+	do
+	{
+      list.displayMenu(&option);
 	
 	list.addStudentFromUser();
 
@@ -18,8 +20,10 @@ int main() {
 	pressToContinue();
 
 	clearScreen();
+	} while (option>=0 && option<=5);
+	
 
-	std::cout <<  "\t\t\tDemo complete.\n ";
+	std::cout << horizontalPadding() << "Demo complete.\n ";
 	return 0;
 
            }

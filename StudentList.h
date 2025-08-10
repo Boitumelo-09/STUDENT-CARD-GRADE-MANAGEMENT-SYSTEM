@@ -15,9 +15,11 @@ public:
 	StudentList();
 	
 	~StudentList();
+	void displayMenu(int* menuOption);
 	void addStudent(StudentData data);
 	void displayAllStudents() const;
 	void addStudentFromUser();
+
 };
 
 

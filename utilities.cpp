@@ -22,9 +22,3 @@ void verticalPadding() {
 std::string horizontalPadding() {
   return  std::string(5, '\t');
 }
-void displayMenu() {
-    verticalPadding();
-
-    std::cout << horizontalPadding() <<std::string(10, ':')<<" M E N U "<<std::string(10 , ':');
-    pressToContinue();
-}
