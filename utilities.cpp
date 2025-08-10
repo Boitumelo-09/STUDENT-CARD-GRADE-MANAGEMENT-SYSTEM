@@ -6,14 +6,25 @@
 void clearScreen() {
     system(CLEAR_COMMAND); 
 }
-
+void newLine() {
+    std::cout<<std::string(2, '\n');
+}
 void pressToContinue() {
-    
-    std::cout << "\n\t\t\tPress Enter To Proceed...";
+    newLine();
+    std::cout <<horizontalPadding()<<"Press Enter To Proceed...";
     std::cin.get();
     clearScreen();
 }
 
-void verticalPadding(int padNumber) {
-    std::cout << std::string(padNumber, '\n');
+void verticalPadding() {
+    std::cout << std::string(5, '\n');
+}
+std::string horizontalPadding() {
+  return  std::string(5, '\t');
+}
+void displayMenu() {
+    verticalPadding();
+
+    std::cout << horizontalPadding() <<std::string(10, ':')<<" M E N U "<<std::string(10 , ':');
+    pressToContinue();
 }

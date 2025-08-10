@@ -31,46 +31,51 @@ void StudentList::addStudent(StudentData data){
 	}
 }
 void StudentList::displayAllStudents() const {
-	verticalPadding(4);
+	verticalPadding();
 	   
 	if (head == nullptr) {
-		std::cout << "\t\t\tNo Students Available";
+		std::cout << horizontalPadding() << "No Students Available";
 		return;
 	}
 	else {
 		StudentNode* tempPtr = head;
 		while (tempPtr != nullptr) {
-			std::cout << "\t\t\tSTUDENT NUMBER : " << tempPtr->getStudentNumber();
-			std::cout << std::endl;
-			std::cout << "\t\t\tSTUDENT NAME   : " << tempPtr->getStudentName();
-			std::cout << std::endl;
-			std::cout << "\t\t\tSTUDENT MARK   : " << tempPtr->getStudentMark();
-			std::cout << "\n\t\t\t::::::::::::::::::::::::::::::::::::::\n";
+			std::cout <<horizontalPadding()<< "STUDENT NUMBER : " << tempPtr->getStudentNumber();
+			newLine();
+			std::cout <<horizontalPadding()<< "STUDENT NAME   : " << tempPtr->getStudentName();
+			newLine();
+			std::cout <<horizontalPadding()<< "STUDENT MARK   : " << tempPtr->getStudentMark();
+			newLine();
+			std::cout <<horizontalPadding()<< std::string(38 , ':');
+			newLine();
+			
 
 			tempPtr = tempPtr->getNext();
 		  }
 	}
 }
 void StudentList::addStudentFromUser() {
-	verticalPadding(4);
+	verticalPadding();
 	int studentNum;
 	std::string studentName;
 	float finalMark;
 
-	std::cout << "\t\t\tEnter Student Number : ";
+	std::cout << horizontalPadding()<<"Enter Student Number : ";
 	std::cin >> studentNum;
 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
-	std::cout << "\t\t\tEnter Student Name   : ";
+	std::cout << horizontalPadding()<<"Enter Student Name   : ";
 	getline(std::cin, studentName);
 	
 
-	std::cout << "\t\t\tEnter Student Mark   : ";
+	std::cout << horizontalPadding()<<"Enter Student Mark   : ";
 	std::cin >> finalMark;
 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
 	addStudent(StudentData(studentNum, studentName, finalMark));
 	clearScreen();
-	std::cout << "\n\t\t\tStudent Added Successfully\n";
+	newLine();
+	std::cout << horizontalPadding() <<"Student Added Successfully";
+	newLine();
 	pressToContinue();
 }

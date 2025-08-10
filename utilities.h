@@ -10,10 +10,12 @@
 #define CLEAR_COMMAND "clear"
 #endif
 void clearScreen();
+void newLine();
 void pressToContinue();
 
+std::string horizontalPadding();
 
-void verticalPadding(int padNumber);
-
+void verticalPadding();
+void displayMenu();
 
 #endif

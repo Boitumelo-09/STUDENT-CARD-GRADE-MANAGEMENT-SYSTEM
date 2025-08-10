@@ -9,8 +9,8 @@
 int main() {
 
 	StudentList list;
-
-	list.addStudentFromUser();
+	displayMenu();
+	
 	list.addStudentFromUser();
 
 	list.displayAllStudents();
@@ -23,3 +23,4 @@ int main() {
 	return 0;
 
            }
+  
