@@ -27,7 +27,8 @@ void StudentList::displayMenu( int* menuOption) {
 	std::cout << horizontalPadding() << "4. Edit Student\n";
 	std::cout << horizontalPadding() << "5. Delete Student\n";
 	std::cout << horizontalPadding() << "0. Exit\n";
-
+	std::cout << horizontalPadding() << "Option : "; 
+	std::cin >> *menuOption;
 	pressToContinue();
 }
 void StudentList::addStudent(StudentData data){
@@ -43,6 +44,8 @@ void StudentList::addStudent(StudentData data){
 			tempPtr=tempPtr->getNext();
 		}
 		tempPtr->setNext(newStudent);
+		pressToContinue();
+		return;
 	}
 }
 void StudentList::displayAllStudents() const {
@@ -51,6 +54,8 @@ void StudentList::displayAllStudents() const {
 	newLine();
 	if (head == nullptr) {
 		std::cout << horizontalPadding() << "No Students Available";
+		newLine();
+		pressToContinue();
 		return;
 	}
 	else {
@@ -64,25 +69,27 @@ void StudentList::displayAllStudents() const {
 			newLine();
 			std::cout <<horizontalPadding()<< std::string(50 , ':');
 			newLine();
-			
-
 			tempPtr = tempPtr->getNext();
 		  }
+		newLine();
+		pressToContinue();
 	}
+	
 }
 void StudentList::addStudentFromUser() {
 	verticalPadding();
+
 	int studentNum;
 	std::string studentName;
 	float finalMark;
-
+	std::cout << horizontalPadding()<<"ADDING STUDENT";
+	newLine();
 	std::cout << horizontalPadding()<<"Enter Student Number : ";
 	std::cin >> studentNum;
 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
 	std::cout << horizontalPadding()<<"Enter Student Name   : ";
 	getline(std::cin, studentName);
-	
 
 	std::cout << horizontalPadding()<<"Enter Student Mark   : ";
 	std::cin >> finalMark;
@@ -94,4 +101,5 @@ void StudentList::addStudentFromUser() {
 	std::cout << horizontalPadding() <<"Student Added Successfully";
 	newLine();
 	pressToContinue();
+	return;  
 }

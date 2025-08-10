@@ -1,5 +1,4 @@
 
-
 #include <iostream>
 #include "StudentData.h"
 #include "StudentNode.h"
@@ -12,14 +11,33 @@ int main() {
 	do
 	{
       list.displayMenu(&option);
+	  switch (option) {
+	  case 1: {
+		  list.addStudentFromUser();
+		  break;
+	  }
+	  case 2: {
+		  list.displayAllStudents();
+		  break;
+	  }
+	  case 3: {
+		  std::cout << "case 2";
+		  break;
+	  }
+	  case 4: {
+		  std::cout << "case 4";
+		  break;
+	  }
+	  case 5: {
+		  std::cout << "case 5";
+		  break;
+	  }
+	  default: {
+		  std::cout << "default";
+			  break;
+	  }
+	 }
 	
-	list.addStudentFromUser();
-
-	list.displayAllStudents();
-
-	pressToContinue();
-
-	clearScreen();
 	} while (option>=0 && option<=5);
 	
 
