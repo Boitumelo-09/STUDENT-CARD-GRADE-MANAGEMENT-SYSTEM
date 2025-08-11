@@ -103,3 +103,10 @@ void StudentList::addStudentFromUser() {
 	pressToContinue();
 	return;  
 }
+void StudentList::searchStudent() {
+	verticalPadding();
+	std::cout << horizontalPadding()<< "SEARCHING FOR STUDENT";
+	newLine();
+	pressToContinue();
+	return;
+}

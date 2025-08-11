@@ -22,3 +22,14 @@ void verticalPadding() {
 std::string horizontalPadding() {
   return  std::string(5, '\t');
 }
+void exitProgram() {
+    clearScreen();
+    verticalPadding();
+    std::cout << horizontalPadding() << "Exiting System...";
+    pressToContinue();
+    clearScreen();
+    verticalPadding();
+    std::cout << horizontalPadding() << "Thank You For Visiting...";
+    verticalPadding();
+    exit(0);
+}
