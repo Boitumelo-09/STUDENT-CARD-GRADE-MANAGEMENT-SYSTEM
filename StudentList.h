@@ -19,6 +19,7 @@ public:
 	void addStudent(StudentData data);
 	void displayAllStudents() const;
 	void addStudentFromUser();
+	void searchStudent();
 
 };
 

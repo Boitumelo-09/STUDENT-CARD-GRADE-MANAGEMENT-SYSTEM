@@ -103,3 +103,27 @@ void StudentList::addStudentFromUser() {
 	pressToContinue();
 	return;  
 }
+void StudentList::searchStudent() {
+	std::string searchName;
+	int searchNumber , searchChoice;
+	verticalPadding();
+	std::cout << horizontalPadding()<< "SEARCHING FOR STUDENT";
+	newLine();
+	std::cout <<horizontalPadding()<< "Search By: ";
+	std::cout <<horizontalPadding()<< "1. Name ";
+	std::cout <<horizontalPadding()<< "2. Student Number ";
+	std::cout <<horizontalPadding()<< "0ption : ";
+	std::cin >> searchChoice;
+	if (searchChoice == 1)
+	{
+		clearScreen();
+		std::cout << horizontalPadding() << "SEARCHING FOR STUDENT BY NAME";
+		newLine();
+		std::cout << horizontalPadding() << "SEARCH : ";
+		std::cin >> searchName;
+
+	}
+	
+	pressToContinue();
+	return;
+}

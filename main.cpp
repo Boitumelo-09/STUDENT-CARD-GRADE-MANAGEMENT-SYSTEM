@@ -21,7 +21,7 @@ int main() {
 		  break;
 	  }
 	  case 3: {
-		  std::cout << "case 2";
+		  list.searchStudent();
 		  break;
 	  }
 	  case 4: {
@@ -29,7 +29,7 @@ int main() {
 		  break;
 	  }
 	  case 5: {
-		  std::cout << "case 5";
+		  exitProgram();
 		  break;
 	  }
 	  default: {
