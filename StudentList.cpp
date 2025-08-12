@@ -104,6 +104,7 @@ void StudentList::addStudentFromUser() {
 	return;  
 }
 void StudentList::searchStudent() {
+
 	StudentNode* tempPtr = head;
 	std::string searchName;
 	int searchNumber , searchChoice;
@@ -132,6 +133,11 @@ void StudentList::searchStudent() {
 		 
 	}
 	
+
+	verticalPadding();
+	std::cout << horizontalPadding()<< "SEARCHING FOR STUDENT";
+	newLine();
+
 	pressToContinue();
 	return;
 }
