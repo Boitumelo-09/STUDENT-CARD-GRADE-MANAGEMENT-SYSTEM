@@ -29,6 +29,10 @@ int main() {
 		  break;
 	  }
 	  case 5: {
+		  std::cout << "case 4";
+		  break;
+	  }
+	  case 0: {
 		  exitProgram();
 		  break;
 	  }
