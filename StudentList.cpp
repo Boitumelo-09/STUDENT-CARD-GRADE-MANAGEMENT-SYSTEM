@@ -119,14 +119,14 @@ StudentNode* StudentList::searchStudentByName(std::string nameOfStudent) const {
      return nullptr;
 }
 StudentNode* StudentList::searchStudentByNumber(int numberOfStudent) const {
-	StudentNode* tempPointer = head;
-	while (tempPointer != nullptr) {
+	StudentNode* tempPoint = head;
+	while (tempPoint != nullptr) {
 		
-		if (tempPointer->getStudentNumber() == numberOfStudent)
+		if (tempPoint->getStudentNumber() == numberOfStudent)
 		{
-			return tempPointer;
+			return tempPoint;
 		}
-		tempPointer = tempPointer->getNext();
+		tempPoint = tempPoint->getNext();
 		
 	}
      return nullptr;
@@ -134,9 +134,12 @@ StudentNode* StudentList::searchStudentByNumber(int numberOfStudent) const {
 
 void StudentList::searchStudent(){
 
-	StudentNode* temp = head;
+	
 	std::string searchName;
-	int searchNumber , searchChoice;
+	int searchNumber=0 , searchChoice;
+	
+	
+
 	verticalPadding();
 	std::cout << horizontalPadding()<< "SEARCHING FOR STUDENT";
 	newLine();
@@ -158,24 +161,84 @@ void StudentList::searchStudent(){
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		getline(std::cin, searchName);
 
-		while (temp->getNext() != nullptr)
-		{
-			if (searchName == temp->getStudentName())
-			{
-				std::cout << "Student Found";
-				break;
-			}
-			else {
-				std::cout << "Student Not Found";
-				break;
-			}
-			temp = temp->getNext();
+       StudentNode* searchPtr = searchStudentByName(searchName);
+		if (searchPtr) {
+			clearScreen();
+			verticalPadding();
+			std::cout << horizontalPadding() << std::string(10, ':') << " S T U D E N T - F O U N D " << std::string(10, ':');
+			newLine();
+			std::cout << horizontalPadding() << "DETAILS:";
+			newLine();
+			std::cout << horizontalPadding() << "     STUDENT NUMBER : "<<searchPtr->getStudentNumber();
+			newLine();
+			std::cout << horizontalPadding() << "     STUDENT NAME   : "<<searchPtr->getStudentName();
+			newLine();
+			std::cout << horizontalPadding() << "     FINAL MARK     : "<<searchPtr->getStudentMark();
+			newLine();
+
+			pressToContinue();
+			return;
+			
 		}
+		else {
+			clearScreen();
+			verticalPadding();
+			std::cout << horizontalPadding() << "     404 :(   ";
+			newLine();
+			std::cout << horizontalPadding() << searchName << " ,Is Not Found";
+			pressToContinue();
+			return;
+		}
+		
+
+	}
+	else if (searchChoice == 2) {
+		clearScreen();
+		verticalPadding();
+		std::cout << horizontalPadding() << "SEARCHING FOR STUDENT BY NUMBER";
+		newLine();
+		std::cout << horizontalPadding() << "SEARCH : ";
+		
+		std::cin >> searchNumber;
+		StudentNode* searchPtrNum = searchStudentByNumber(searchNumber);
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		if (searchPtrNum) {
+			clearScreen();
+			verticalPadding();
+			std::cout << horizontalPadding() << std::string(10, ':') << " S T U D E N T - F O U N D " << std::string(10, ':');
+			newLine();
+			std::cout << horizontalPadding() << "DETAILS:";
+			newLine();
+			std::cout << horizontalPadding() << "     STUDENT NUMBER : " << searchPtrNum->getStudentNumber();
+			newLine();
+			std::cout << horizontalPadding() << "     STUDENT NAME   : " << searchPtrNum->getStudentName();
+			newLine();
+			std::cout << horizontalPadding() << "     FINAL MARK     : " << searchPtrNum->getStudentMark();
+			newLine();
+
+			pressToContinue();
+			return;
+		}
+		else {
+
+			clearScreen();
+			verticalPadding();
+			std::cout << horizontalPadding() << "     404 :(   ";
+			newLine();
+			std::cout << horizontalPadding() <<"Student Number : "<<searchNumber<<" ,Is Not Found";
+			pressToContinue();
+			return;
+			 
+		}
+	}
+	else {
+		verticalPadding();
+		std::cout<<horizontalPadding() << "Invalid Choice";
+
 	}
 	verticalPadding();
 	std::cout << horizontalPadding()<< "SEARCHING FOR STUDENT";
 	newLine();
-
 	pressToContinue();
 	return;
 }

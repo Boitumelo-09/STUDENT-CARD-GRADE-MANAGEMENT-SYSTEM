@@ -42,7 +42,7 @@ int main() {
 	  default: {
 		  clearScreen();
 		  verticalPadding();
-		  std::cout<<horizontalPadding() << "Invalid Input";
+		  std::cout<<horizontalPadding() << "Undefined Input";
 		  newLine();
 		  exitProgram();
 			  break;
@@ -50,9 +50,6 @@ int main() {
 	 }
 	
 	} while (option>=0 && option<=5);
-	
-
-	std::cout << horizontalPadding() << "Demo complete.\n ";
 	return 0;
 
            }
