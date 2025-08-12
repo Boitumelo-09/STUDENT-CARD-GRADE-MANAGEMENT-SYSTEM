@@ -20,6 +20,8 @@ public:
 	void displayAllStudents() const;
 	void addStudentFromUser();
 	void searchStudent();
+	StudentNode* searchStudentByNumber(int numberOfStudent) const;
+	StudentNode* searchStudentByName(std::string nameOfStudent) const;
 
 };
 

@@ -103,9 +103,38 @@ void StudentList::addStudentFromUser() {
 	pressToContinue();
 	return;  
 }
-void StudentList::searchStudent() {
 
-	StudentNode* tempPtr = head;
+
+StudentNode* StudentList::searchStudentByName(std::string nameOfStudent) const {
+	StudentNode* tempPointer = head;
+	while (tempPointer != nullptr) {
+		
+		if (tempPointer->getStudentName() == nameOfStudent ) 
+		{
+			return tempPointer;
+		}
+		tempPointer = tempPointer->getNext();
+		
+	}
+     return nullptr;
+}
+StudentNode* StudentList::searchStudentByNumber(int numberOfStudent) const {
+	StudentNode* tempPointer = head;
+	while (tempPointer != nullptr) {
+		
+		if (tempPointer->getStudentNumber() == numberOfStudent)
+		{
+			return tempPointer;
+		}
+		tempPointer = tempPointer->getNext();
+		
+	}
+     return nullptr;
+}
+
+void StudentList::searchStudent(){
+
+	StudentNode* temp = head;
 	std::string searchName;
 	int searchNumber , searchChoice;
 	verticalPadding();
@@ -128,12 +157,21 @@ void StudentList::searchStudent() {
 		std::cout << horizontalPadding() << "SEARCH : ";
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		getline(std::cin, searchName);
-		      
-		   
-		 
+
+		while (temp->getNext() != nullptr)
+		{
+			if (searchName == temp->getStudentName())
+			{
+				std::cout << "Student Found";
+				break;
+			}
+			else {
+				std::cout << "Student Not Found";
+				break;
+			}
+			temp = temp->getNext();
+		}
 	}
-	
-
 	verticalPadding();
 	std::cout << horizontalPadding()<< "SEARCHING FOR STUDENT";
 	newLine();
@@ -141,10 +179,4 @@ void StudentList::searchStudent() {
 	pressToContinue();
 	return;
 }
-void StudentList::searchStudent() {
-	verticalPadding();
-	std::cout << horizontalPadding()<< "SEARCHING FOR STUDENT";
-	newLine();
-	pressToContinue();
-	return;
-}
+
