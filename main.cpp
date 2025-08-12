@@ -29,6 +29,7 @@ int main() {
 		  break;
 	  }
 	  case 5: {
+		  exitProgram();
 
 		  std::cout << "case 4";
 		  break;
