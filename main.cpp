@@ -37,7 +37,11 @@ int main() {
 		  break;
 	  }
 	  default: {
-		  std::cout << "default";
+		  clearScreen();
+		  verticalPadding();
+		  std::cout<<horizontalPadding() << "Invalid Input";
+		  newLine();
+		  exitProgram();
 			  break;
 	  }
 	 }
