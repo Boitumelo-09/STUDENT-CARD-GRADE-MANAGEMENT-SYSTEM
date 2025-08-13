@@ -238,10 +238,85 @@ void StudentList::searchStudent(){
 }
 
 void StudentList::editStudent() {
+	int searchNumToUpdate , editOption=0;
+	std::string newName;
+	float newMark{0.0};
 	clearScreen();
 	verticalPadding();
-	StudentNode* accessPtr = head;
+	
 	std::cout << horizontalPadding() << "EDITING STUDENT INFO";
 	newLine();
+	std::cout << horizontalPadding() << "Student Number : ";
+	std::cin>>searchNumToUpdate;
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
+	StudentNode* accessPtr = searchStudentByNumber(searchNumToUpdate);
+
+	if (accessPtr)
+	{
+		clearScreen();
+		verticalPadding();
+
+		std::cout << horizontalPadding() << "Student Exists";
+		newLine();
+		std::cout << horizontalPadding()<<" OPTIONS ";
+		newLine();
+		std::cout << horizontalPadding()<<"     1. Edit Student Name";
+		newLine();
+		std::cout << horizontalPadding()<<"     2. Edit Student Mark";
+		newLine();
+		std::cout << horizontalPadding() << "Option : ";
+		std::cin >> editOption;
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+		switch (editOption) {
+		case 1: {
+			clearScreen();
+			verticalPadding();
+			std::cout << horizontalPadding() << "EDITING STUDENT NAME";
+			newLine();
+			std::cout << horizontalPadding() << "Enter New Name:";
+			getline(std::cin, newName);
+			accessPtr->setStudentName(newName);
+			clearScreen();
+			verticalPadding();
+			std::cout << horizontalPadding() << "Student Name Has Been Successfully Updated.";
+			newLine();
+			pressToContinue;
+			break;
+		}
+		case 2: {
+			clearScreen();
+			verticalPadding();
+			std::cout << horizontalPadding() << "EDITING STUDENT MARK";
+			newLine();
+			std::cout << horizontalPadding() << "Enter New Mark:";
+			std::cin>>newMark;
+			accessPtr->setStudentMark(newMark);
+			clearScreen();
+			verticalPadding();
+			std::cout << horizontalPadding() << "Student Mark Has Been Successfully Updated.";
+			newLine();
+			pressToContinue;
+			break;
+		}
+		default: {
+			clearScreen();
+			verticalPadding();
+			std::cout << horizontalPadding() << "INVALID INPUT :(";
+			newLine();
+			pressToContinue();
+			break;
+		}
+		}
+		return;
+	}
+	else {
+		clearScreen();
+		verticalPadding();
+		std::cout <<horizontalPadding()<< "The Student Number : " << searchNumToUpdate << " , Doesn't Exist.";
+		newLine();
+		pressToContinue();
+		return;
+	}
 }
