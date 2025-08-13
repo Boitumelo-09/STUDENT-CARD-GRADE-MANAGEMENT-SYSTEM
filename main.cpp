@@ -25,7 +25,7 @@ int main() {
 		  break;
 	  }
 	  case 4: {
-		  std::cout << "case 4";
+		  list.editStudent();
 		  break;
 	  }
 	  case 5: {

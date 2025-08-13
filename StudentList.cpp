@@ -137,9 +137,6 @@ void StudentList::searchStudent(){
 	
 	std::string searchName;
 	int searchNumber=0 , searchChoice;
-	
-	
-
 	verticalPadding();
 	std::cout << horizontalPadding()<< "SEARCHING FOR STUDENT";
 	newLine();
@@ -234,12 +231,17 @@ void StudentList::searchStudent(){
 	else {
 		verticalPadding();
 		std::cout<<horizontalPadding() << "Invalid Choice";
+		return;
 
 	}
-	verticalPadding();
-	std::cout << horizontalPadding()<< "SEARCHING FOR STUDENT";
-	newLine();
-	pressToContinue();
 	return;
 }
 
+void StudentList::editStudent() {
+	clearScreen();
+	verticalPadding();
+	StudentNode* accessPtr = head;
+	std::cout << horizontalPadding() << "EDITING STUDENT INFO";
+	newLine();
+
+}
