@@ -278,11 +278,14 @@ void StudentList::editStudent() {
 			std::cout << horizontalPadding() << "Enter New Name:";
 			getline(std::cin, newName);
 			accessPtr->setStudentName(newName);
+			
+
 			clearScreen();
 			verticalPadding();
 			std::cout << horizontalPadding() << "Student Name Has Been Successfully Updated.";
 			newLine();
-			pressToContinue;
+			
+			pressToContinue();
 			break;
 		}
 		case 2: {
@@ -293,12 +296,13 @@ void StudentList::editStudent() {
 			std::cout << horizontalPadding() << "Enter New Mark:";
 			std::cin>>newMark;
 			accessPtr->setStudentMark(newMark);
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 			clearScreen();
 			verticalPadding();
 			std::cout << horizontalPadding() << "Student Mark Has Been Successfully Updated.";
 			newLine();
-			pressToContinue;
-			break;
+			pressToContinue();
+				break;
 		}
 		default: {
 			clearScreen();
@@ -320,3 +324,4 @@ void StudentList::editStudent() {
 		return;
 	}
 }
+void StudentList::deleteStudent();

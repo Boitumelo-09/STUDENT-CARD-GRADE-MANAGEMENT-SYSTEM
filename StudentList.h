@@ -23,6 +23,7 @@ public:
 	StudentNode* searchStudentByNumber(int numberOfStudent) const;
 	StudentNode* searchStudentByName(std::string nameOfStudent) const;
 	void editStudent();
+	void deleteStudent();
 };
 
 

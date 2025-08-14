@@ -29,20 +29,17 @@ int main() {
 		  break;
 	  }
 	  case 5: {
-		  exitProgram();
-
-		  std::cout << "case 4";
+		  list.deleteStudent();
 		  break;
 	  }
 	  case 0: {
-
 		  exitProgram();
 		  break;
 	  }
 	  default: {
 		  clearScreen();
 		  verticalPadding();
-		  std::cout<<horizontalPadding() << "Undefined Input";
+		  std::cout<<horizontalPadding() << "Input Not Recognised";
 		  newLine();
 		  exitProgram();
 			  break;
