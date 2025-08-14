@@ -324,4 +324,84 @@ void StudentList::editStudent() {
 		return;
 	}
 }
-void StudentList::deleteStudent();
+
+bool StudentList::deleteStudentByNumber(int studentNumber) {
+	if (head == nullptr) return false;
+	if (head->getStudentNumber() == studentNumber) {
+		StudentNode* temp = head;
+		head = head->getNext();
+		delete temp;
+		return true;
+	}
+	StudentNode* prev = nullptr;
+	StudentNode* current = head;
+
+	while (current != nullptr && current->getStudentNumber() != studentNumber) {
+		prev = current;
+		current = current->getNext();
+	}
+	if (current == nullptr) return false;
+	prev->setNext(current->getNext());
+	delete current;
+	return true;
+}
+
+void StudentList::deleteStudent() {
+	int studentNumber{ 0 };
+	clearScreen();
+	verticalPadding();
+	std::cout << horizontalPadding()<<"REMOVING STUDENT";
+	newLine();
+	
+	std::cout <<horizontalPadding()<< " Student Number : ";
+	std::cin >> studentNumber;
+
+	StudentNode* searchPtr = searchStudentByNumber(studentNumber);
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	if(searchPtr)
+	{
+		clearScreen();
+		verticalPadding();
+		std::cout << horizontalPadding() << "Student Exists";
+		newLine();
+		std::cout << horizontalPadding() << "DETAILS:";
+		newLine();
+		std::cout << horizontalPadding() << "     STUDENT NUMBER : " << searchPtr->getStudentNumber();
+		newLine();
+		std::cout << horizontalPadding() << "     STUDENT NAME   : " << searchPtr->getStudentName();
+		newLine();
+		std::cout << horizontalPadding() << "     FINAL MARK     : " << searchPtr->getStudentMark();
+		newLine();
+		std::cout << horizontalPadding() << std::string(50, ':');
+		newLine();
+		pressToContinue();
+
+		if (deleteStudentByNumber(studentNumber)) {
+			clearScreen();
+		verticalPadding();
+		std::cout << horizontalPadding() << "Student Number : " << studentNumber << " ,Has Been Successfully Removed From List";
+		
+		newLine();
+		pressToContinue();
+		return;
+		}
+		else {
+			clearScreen();
+			std::cout<<horizontalPadding()<<"error";
+			newLine();
+			pressToContinue();
+			return;
+		}
+
+	}
+	else {
+		clearScreen();
+		verticalPadding();
+		std::cout << horizontalPadding() << "Student Number : "<<studentNumber<<" ,Doesn't Exists.";
+		newLine();
+		std::cout << horizontalPadding() << "Check If The Student Is Available In The Student List";
+		newLine();
+		pressToContinue();
+		return;
+	}
+}
