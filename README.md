@@ -48,8 +48,8 @@ Designed for beginner-to-intermediate C++ learners, this project demonstrates **
 ### 1️⃣ Clone the repository
 
 ```bash
-git clone https://github.com/<your-username>/student-card-grade-management-system.git
-cd student-card-grade-management-system
+git clone https://github.com/Boitumelo-09/STUDENT-CARD-GRADE-MANAGEMENT-SYSTEM.git
+cd STUDENT-CARD-GRADE-MANAGEMENT-SYSTEM.
 ```
 
 ### 2️⃣ Compile the project
